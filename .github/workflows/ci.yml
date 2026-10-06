@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.runCommand({ping:1})'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      MONGO_URI: mongodb://localhost:27017
+      MONGO_DB: desafio_qa_ci
+      JWT_SECRET: ci-only-secret
+      PORT: 3000
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Gerar bundle do front
+        run: npm run build:web
+
+      - name: Subir a aplicação e conferir o health check
+        run: |
+          npm start > app.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:3000/api/health > /dev/null; then
+              echo "Aplicação no ar"
+              curl -s http://localhost:3000/api/health
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Aplicação não subiu a tempo"; cat app.log; exit 1
+
+      # Ponto de extensão: adicione aqui os passos de testes (API e E2E) do desafio,
+      # por exemplo "npm run test:api" e "npx playwright test", antes do job terminar.

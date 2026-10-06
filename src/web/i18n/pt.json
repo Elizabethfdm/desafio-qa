@@ -1,0 +1,105 @@
+{
+  "app": {
+    "brand": "Portal Demo"
+  },
+  "login": {
+    "title": "Entrar",
+    "email": "E-mail",
+    "password": "Senha",
+    "submit": "Entrar"
+  },
+  "menu": {
+    "contacts": "Contatos",
+    "products": "Produtos",
+    "employees": "Funcionários",
+    "authorizeds": "Autorizadas"
+  },
+  "header": {
+    "logout": "Sair"
+  },
+  "noAccess": "Você não tem acesso a nenhuma tela.",
+  "contacts": {
+    "title": "Contatos",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "save": "Salvar contato",
+    "success": "Contato salvo com sucesso.",
+    "listTitle": "Contatos cadastrados",
+    "empty": "Nenhum contato cadastrado.",
+    "phonePlaceholder": {
+      "brasil": "+55 (__) _____-____",
+      "argentina": "+54 __________",
+      "colombia": "+57 ___ ___ ____"
+    }
+  },
+  "products": {
+    "title": "Produtos",
+    "filterName": "Nome ou código",
+    "filterCategory": "Categoria",
+    "filterStatus": "Situação",
+    "all": "Todos",
+    "search": "Buscar",
+    "columns": {
+      "image": "Imagem",
+      "name": "Nome",
+      "category": "Categoria",
+      "status": "Situação",
+      "price": "Preço",
+      "code": "Código",
+      "model": "Modelo"
+    },
+    "empty": "Nenhum produto encontrado.",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "pageInfo": "Página {page} de {pages} — {total} itens"
+  },
+  "employees": {
+    "title": "Funcionários",
+    "name": "Nome",
+    "email": "E-mail",
+    "role": "Cargo",
+    "select": "Selecione",
+    "save": "Cadastrar funcionário",
+    "success": "Funcionário cadastrado com sucesso.",
+    "listTitle": "Funcionários cadastrados",
+    "filterRole": "Filtrar por cargo",
+    "all": "Todos",
+    "empty": "Nenhum funcionário encontrado.",
+    "columns": {
+      "name": "Nome",
+      "email": "E-mail",
+      "role": "Cargo"
+    }
+  },
+  "errors": {
+    "REQUIRED": "Este campo é obrigatório.",
+    "MIN_LENGTH": "Informe ao menos 2 caracteres.",
+    "INVALID_EMAIL": "E-mail inválido.",
+    "INVALID_PHONE": "Telefone inválido para o país.",
+    "INVALID_ROLE": "Cargo inválido.",
+    "DUPLICATE_EMAIL": "Este e-mail já está cadastrado.",
+    "INVALID_CREDENTIALS": "E-mail ou senha inválidos.",
+    "FORBIDDEN": "Você não tem permissão para esta ação.",
+    "GENERIC": "Não foi possível concluir a operação.",
+    "INVALID_COUNTRY": "País inválido."
+  },
+  "authorizeds": {
+    "title": "Autorizadas",
+    "authorizedName": "Nome da autorizada",
+    "ownerName": "Nome do proprietário",
+    "ownerEmail": "E-mail do proprietário",
+    "country": "País",
+    "select": "Selecione",
+    "save": "Cadastrar autorizada",
+    "success": "Autorizada e proprietário cadastrados com sucesso.",
+    "listTitle": "Autorizadas cadastradas",
+    "empty": "Nenhuma autorizada cadastrada.",
+    "columns": {
+      "name": "Autorizada",
+      "country": "País",
+      "owner": "Proprietário",
+      "employees": "Funcionários"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "app": {
+    "brand": "Demo Portal"
+  },
+  "login": {
+    "title": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in"
+  },
+  "menu": {
+    "contacts": "Contacts",
+    "products": "Products",
+    "employees": "Employees",
+    "authorizeds": "Authorized partners"
+  },
+  "header": {
+    "logout": "Log out"
+  },
+  "noAccess": "You do not have access to any screen.",
+  "contacts": {
+    "title": "Contacts",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "save": "Save contact",
+    "success": "Contact saved successfully.",
+    "listTitle": "Registered contacts",
+    "empty": "No contacts registered.",
+    "phonePlaceholder": {
+      "brasil": "+55 (__) _____-____",
+      "argentina": "+54 __________",
+      "colombia": "+57 ___ ___ ____"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "filterName": "Name or code",
+    "filterCategory": "Category",
+    "filterStatus": "Status",
+    "all": "All",
+    "search": "Search",
+    "columns": {
+      "image": "Image",
+      "name": "Name",
+      "category": "Category",
+      "status": "Status",
+      "price": "Price",
+      "code": "Code",
+      "model": "Model"
+    },
+    "empty": "No products found.",
+    "previous": "Previous",
+    "next": "Next",
+    "pageInfo": "Page {page} of {pages} — {total} items"
+  },
+  "employees": {
+    "title": "Employees",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "select": "Select",
+    "save": "Register employee",
+    "success": "Employee registered successfully.",
+    "listTitle": "Registered employees",
+    "filterRole": "Filter by role",
+    "all": "All",
+    "empty": "No employees found.",
+    "columns": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role"
+    }
+  },
+  "errors": {
+    "REQUIRED": "This field is required.",
+    "MIN_LENGTH": "Enter at least 2 characters.",
+    "INVALID_EMAIL": "Invalid email.",
+    "INVALID_PHONE": "Invalid phone for the country.",
+    "INVALID_ROLE": "Invalid role.",
+    "DUPLICATE_EMAIL": "This email is already registered.",
+    "INVALID_CREDENTIALS": "Invalid email or password.",
+    "FORBIDDEN": "You do not have permission for this action.",
+    "GENERIC": "The operation could not be completed.",
+    "INVALID_COUNTRY": "Invalid country."
+  },
+  "authorizeds": {
+    "title": "Authorized partners",
+    "authorizedName": "Partner name",
+    "ownerName": "Owner name",
+    "ownerEmail": "Owner email",
+    "country": "Country",
+    "select": "Select",
+    "save": "Register partner",
+    "success": "Partner and owner registered successfully.",
+    "listTitle": "Registered partners",
+    "empty": "No partners registered.",
+    "columns": {
+      "name": "Partner",
+      "country": "Country",
+      "owner": "Owner",
+      "employees": "Employees"
+    }
+  }
+}

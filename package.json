@@ -1,0 +1,32 @@
+{
+  "name": "desafio-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mini portal fictício (menu, formulários, listagem com imagem, permissões por JWT) para servir de sistema-alvo em um desafio técnico de QA.",
+  "scripts": {
+    "build:web": "esbuild src/web/app.ts --bundle --outfile=public/app.js --loader:.json=json --target=es2020 --sourcemap",
+    "start": "npm run build:web && tsx src/server/index.ts",
+    "dev": "npm run build:web && tsx watch src/server/index.ts",
+    "seed": "tsx src/server/seed-cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.0",
+    "esbuild": "^0.23.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

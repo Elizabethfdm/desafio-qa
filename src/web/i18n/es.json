@@ -1,0 +1,105 @@
+{
+  "app": {
+    "brand": "Portal Demo"
+  },
+  "login": {
+    "title": "Ingresar",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Ingresar"
+  },
+  "menu": {
+    "contacts": "Contactos",
+    "products": "Productos",
+    "employees": "Empleados",
+    "authorizeds": "Autorizadas"
+  },
+  "header": {
+    "logout": "Salir"
+  },
+  "noAccess": "No tienes acceso a ninguna pantalla.",
+  "contacts": {
+    "title": "Contactos",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "save": "Guardar contacto",
+    "success": "Contacto guardado con éxito.",
+    "listTitle": "Contactos registrados",
+    "empty": "No hay contactos registrados.",
+    "phonePlaceholder": {
+      "brasil": "+55 (__) _____-____",
+      "argentina": "+54 __________",
+      "colombia": "+57 ___ ___ ____"
+    }
+  },
+  "products": {
+    "title": "Productos",
+    "filterName": "Nombre o código",
+    "filterCategory": "Categoría",
+    "filterStatus": "Estado",
+    "all": "Todos",
+    "search": "Buscar",
+    "columns": {
+      "image": "Imagen",
+      "name": "Nombre",
+      "category": "Categoría",
+      "status": "Estado",
+      "price": "Precio",
+      "code": "Código",
+      "model": "Modelo"
+    },
+    "empty": "No se encontraron productos.",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pageInfo": "Página {page} de {pages} — {total} elementos"
+  },
+  "employees": {
+    "title": "Empleados",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "role": "Cargo",
+    "select": "Seleccione",
+    "save": "Registrar empleado",
+    "success": "Empleado registrado con éxito.",
+    "listTitle": "Empleados registrados",
+    "filterRole": "Filtrar por cargo",
+    "all": "Todos",
+    "empty": "No se encontraron empleados.",
+    "columns": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "role": "Cargo"
+    }
+  },
+  "errors": {
+    "REQUIRED": "Este campo es obligatorio.",
+    "MIN_LENGTH": "Ingresa al menos 2 caracteres.",
+    "INVALID_EMAIL": "Correo electrónico inválido.",
+    "INVALID_PHONE": "Teléfono inválido para el país.",
+    "INVALID_ROLE": "Cargo inválido.",
+    "DUPLICATE_EMAIL": "Este correo ya está registrado.",
+    "INVALID_CREDENTIALS": "Correo o contraseña inválidos.",
+    "FORBIDDEN": "No tienes permiso para esta acción.",
+    "GENERIC": "No fue posible completar la operación.",
+    "INVALID_COUNTRY": "País inválido."
+  },
+  "authorizeds": {
+    "title": "Autorizadas",
+    "authorizedName": "Nombre de la autorizada",
+    "ownerName": "Nombre del propietario",
+    "ownerEmail": "Correo del propietario",
+    "country": "País",
+    "select": "Seleccione",
+    "save": "Registrar autorizada",
+    "success": "Autorizada y propietario registrados con éxito.",
+    "listTitle": "Autorizadas registradas",
+    "empty": "No hay autorizadas registradas.",
+    "columns": {
+      "name": "Autorizada",
+      "country": "País",
+      "owner": "Propietario",
+      "employees": "Empleados"
+    }
+  }
+}
