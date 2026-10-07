@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  build-and-smoke:
+  build-and-test:
     runs-on: ubuntu-latest
 
     services:
@@ -26,20 +26,29 @@ jobs:
       PORT: 3000
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
       - name: Typecheck
         run: npm run typecheck
 
       - name: Gerar bundle do front
         run: npm run build:web
+
+      - name: Instalar navegador do Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Preparar dados iniciais
+        run: npm run seed
 
       - name: Subir a aplicação e conferir o health check
         run: |
@@ -52,7 +61,25 @@ jobs:
             fi
             sleep 2
           done
-          echo "Aplicação não subiu a tempo"; cat app.log; exit 1
+          echo "Aplicação não subiu a tempo"
+          cat app.log
+          exit 1
 
-      # Ponto de extensão: adicione aqui os passos de testes (API e E2E) do desafio,
-      # por exemplo "npm run test:api" e "npx playwright test", antes do job terminar.
+      - name: Executar testes de API
+        run: npm run test:api
+        continue-on-error: true
+
+      - name: Executar testes E2E
+        run: npm run test:e2e
+        continue-on-error: true
+
+      - name: Publicar relatórios e evidências
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-reports
+          path: |
+            reports/playwright-report
+            reports/test-results
+          if-no-files-found: warn
+          retention-days: 7
