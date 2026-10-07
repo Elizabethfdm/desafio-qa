@@ -53,23 +53,28 @@ jobs:
       - name: Subir a aplicação e conferir o health check
         run: |
           npm start > app.log 2>&1 &
+
           for i in $(seq 1 30); do
             if curl -sf http://localhost:3000/api/health > /dev/null; then
               echo "Aplicação no ar"
               curl -s http://localhost:3000/api/health
               exit 0
             fi
+
             sleep 2
           done
+
           echo "Aplicação não subiu a tempo"
           cat app.log
           exit 1
 
       - name: Executar testes de API
+        id: api-tests
         run: npm run test:api
         continue-on-error: true
 
       - name: Executar testes E2E
+        id: e2e-tests
         run: npm run test:e2e
         continue-on-error: true
 
@@ -83,3 +88,17 @@ jobs:
             reports/test-results
           if-no-files-found: warn
           retention-days: 7
+
+      - name: Validar resultado dos testes
+        if: always()
+        run: |
+          echo "Resultado API: ${{ steps.api-tests.outcome }}"
+          echo "Resultado E2E: ${{ steps.e2e-tests.outcome }}"
+
+          if [ "${{ steps.api-tests.outcome }}" = "failure" ] || [ "${{ steps.e2e-tests.outcome }}" = "failure" ]; then
+            echo "Foram encontrados testes com falha."
+            echo "Consulte o artefato playwright-reports para as evidências."
+            exit 1
+          fi
+
+          echo "Todos os testes automatizados passaram."
